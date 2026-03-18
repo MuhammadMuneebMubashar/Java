@@ -102,4 +102,27 @@ public final class Volume {
     public static double volumeFrustumOfCone(double r1, double r2, double height) {
         return (Math.PI * height / 3) * (r1 * r1 + r2 * r2 + r1 * r2);
     }
+
+    /**
+     * Calculate the volume of a frustum of a pyramid.
+     *
+     * @param upperBaseArea area of the upper base
+     * @param lowerBaseArea area of the lower base
+     * @param height height of the frustum
+     * @return volume of the frustum
+     */
+    public static double volumeFrustumOfPyramid(double upperBaseArea, double lowerBaseArea, double height) {
+        return (upperBaseArea + lowerBaseArea + Math.sqrt(upperBaseArea * lowerBaseArea)) * height / 3;
+    }
+
+    /**
+     * Calculate the volume of a torus.
+     *
+     * @param majorRadius major radius of a torus
+     * @param minorRadius minor radius of a torus
+     * @return volume of the torus
+     */
+    public static double volumeTorus(double majorRadius, double minorRadius) {
+        return 2 * Math.PI * Math.PI * majorRadius * minorRadius * minorRadius;
+    }
 }
